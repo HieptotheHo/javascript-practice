@@ -3,7 +3,7 @@ const isPerfectNumber = (n) => {
     for(let i = 1;i<=n/2;i++) {
         if(n%i===0) sumOfDivisor+=i;
     }
-    return sumOfDivisor == n? true : false;
+    return sumOfDivisor === n;
 }
 
 console.log(isPerfectNumber(6))

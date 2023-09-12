@@ -1,4 +1,5 @@
 const isAllPerfectNumbersV1 = (numberList) => {
+    if(numberList.length===0) return false;
     for(let i = 0;i<numberList.length;i++) {
         if(!isPerfectNumber(numberList[i])) return false;
     }
@@ -6,14 +7,13 @@ const isAllPerfectNumbersV1 = (numberList) => {
 }
 
 const isAllPerfectNumbersV2 = (numberList) => {
-    let perfectNumCounter = numberList.reduce((accumulator,ele) => {if(isPerfectNumber(ele)) return accumulator+1;},0)
-    console.log(perfectNumCounter)
-    return perfectNumCounter == numberList.length? true : false;
+    if(numberList.length===0) return false;
+    return numberList.length === numberList.reduce((accumulator,number) => {if(isPerfectNumber(number)) return accumulator+1;},0);
 }
 
 const isAllPerfectNumbersV3 = (numberList) => {
-    if(numberList.every(isPerfectNumber)) return true;
-    return false;
+    if(numberList.length===0) return false;
+    return numberList.every(isPerfectNumber);
 }
 
 const isPerfectNumber = (n) => {
@@ -25,7 +25,7 @@ const isPerfectNumber = (n) => {
 }
 
 
-numberList = [6,6,28]
+numberList = [6,28]
 console.log(isAllPerfectNumbersV1(numberList));
 console.log(isAllPerfectNumbersV2(numberList));
 console.log(isAllPerfectNumbersV3(numberList));

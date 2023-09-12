@@ -1,28 +1,28 @@
 const hasPrimeV1 = (numberList) => {
     for(let i = 0; i <numberList.length;i++) {
-        if(isPrime(numberList[i])) return false; 
+        if(isPrime(numberList[i])) return true; 
     }
-    return true;
+    return false;
 }
 
 const hasPrimeV2 = (numberList) => {
-    let flag = true;
-    numberList.forEach((ele)=> {
-        if(isPrime(ele)) flag = false;
+    let flag = false
+    numberList.forEach((number)=> {
+        if(isPrime(number)) flag =  true;
     })
     return flag;
 }
 const hasPrimeV3 = (numberList) => {
-    if(!numberList.find((ele) => isPrime(ele))) return true;
+    if(numberList.find((number) => isPrime(number))) return true;
     return false;
 }
 const hasPrimeV4 = (numberList) => {
-    if(numberList.findIndex((ele) => isPrime(ele))==-1) return true;
-    return false;
+    if(numberList.findIndex((ele) => isPrime(ele))==-1) return false;
+    return true;
 }
 const hasPrimeV5 = (numberList) => {
-    if(numberList.some(isPrime)) return false;
-    return true;
+    if(numberList.some(isPrime)) return true;
+    return false;
 }
 
 function isPrime(n) {
@@ -33,7 +33,7 @@ function isPrime(n) {
     return true;
 }
 
-var numberList = [32,10,30,6,12];
+var numberList = [32,10,30,6,12,13];
 
 console.log(hasPrimeV1(numberList));
 console.log(hasPrimeV2(numberList));

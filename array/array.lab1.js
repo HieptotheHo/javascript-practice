@@ -1,10 +1,10 @@
 function createArrayInRangeV1(a, b) {
-    let tempArr = [];
-    if(!(a<b && a > -100 && b <100)) return -1;
+    const result = [];
+    if(a>b || a<-100 || b>100) return [];
     for(let i = a; i <=b;i++) {
-        tempArr.push(i);
+        result.push(i);
     }
-    return tempArr;
+    return result;
 }
 
 console.log(createArrayInRangeV1(-13,20))

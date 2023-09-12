@@ -1,9 +1,9 @@
 const calcAvgOfAllEvenNumbers=(numberList) => {
-    if(!(Array.isArray(numberList)) || numberList.length==0) return 0;
+    if(!(Array.isArray(numberList)) || numberList.length===0) return 0;
 
-    let sum = 0;
-    numberList.forEach((ele) => sum+=ele);
-    return Math.round(sum/numberList.length);
+    return Math.ceil((numberList.reduce((sum,element)=> {
+        return sum+=element;
+    },0)) / numberList.length);
 }
 
 console.log(calcAvgOfAllEvenNumbers([]));
