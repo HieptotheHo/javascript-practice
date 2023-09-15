@@ -1,5 +1,5 @@
 function cloneObject(obj) {
-    let clonedObj = {};
+    const clonedObj = {};
    
     for (var prop in obj) {
         clonedObj[prop] = obj[prop];
